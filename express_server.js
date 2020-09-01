@@ -22,9 +22,8 @@ function generateRandomString() {
     }
   }
   return genertatedShortURL;
-
 }
-
+const newShortURL = generateRandomString();
 const urlDatabase = { 
 'b2xVn2': 'http://www.lighthouselabs.ca',
 '9sm5xK': 'http://www.google.com'
@@ -44,13 +43,18 @@ app.get('/urls/new', (req, res) => {
 });
 
 app.post("/urls", (req, res) => {
-  console.log(req.body);
-  res.send("OK");
+  urlDatabase[newShortURL] = req.body.longURL;
+  res.redirect(`/urls/:${newShortURL}`)
 });
 
-app.get('/urls/:shortURL', (req, res) => {
-  let templateVars = {shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL]};
-  res.render('urls_show', templateVars);
+app.get('/u*/:shortURL', (req, res) => {
+  //let templateVars = {shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL]};
+  //res.render('urls_show', templateVars);
+  longURLKey = String(req.params.shortURL);
+  //console.log(req.params);
+  let longURL = urlDatabase[longURLKey];
+  res.redirect(longURL);
+ 
 })
 app.get('/urls.json', (req, res) => {
   res.json(urlDatabase);
