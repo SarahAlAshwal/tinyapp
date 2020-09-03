@@ -161,7 +161,8 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.render('login');
+  let templateVars = { userObj: users[req.cookies["id"]]}
+  res.render('login',templateVars);
 });
 
 app.post('/login', (req, res) => {
@@ -186,7 +187,8 @@ app.post('/logout', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-  res.render('register');
+  let templateVars = { userObj: users[req.cookies["id"]]}
+  res.render('register',templateVars);
 });
 
 app.post('/register', (req, res) => {
