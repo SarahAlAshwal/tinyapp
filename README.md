@@ -6,7 +6,7 @@ TinyApp is a full stack web application built with Node and Express that allows 
 
 !["A sreenshot for the creating a new short URL"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/CreateNewURL.png)
 !["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/EditUrl.png)
-!["A screenshot for the Urls of one of the users"] (https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/UrlsPage.png)
+!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/UrlsPage.png)
 
 ## Dependencies
 
